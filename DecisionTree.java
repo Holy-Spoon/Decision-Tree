@@ -1,13 +1,3 @@
-// This program is copyright VUW.
-// You are granted permission to use it to construct your answer to a COMP103 assignment.
-// You may not distribute it in any other way without permission.
-
-/* Code for COMP103 - 2025T2, Assignment 4
- * Name: Matthew McGowan
- * Username: mcgowamatt
- * ID:300672872
- */
-
 /**
  * Implements a decision tree that asks a user yes/no questions to determine a decision.
  * Eg, asks about properties of an animal to determine the type of animal.
@@ -54,27 +44,15 @@ public class DecisionTree {
         UI.addButton("Print Tree", this::printTree);
         UI.addButton("Run Tree", this::runTree);
         UI.addButton("Grow Tree", this::growTree);
-        UI.addButton("Save Tree", this::saveTree);  // for completion
-        UI.addButton("Draw Tree", this::drawTree);  // for challenge
+        UI.addButton("Save Tree", this::saveTree); 
+        UI.addButton("Draw Tree", this::drawTree);  
         UI.addButton("Reset", ()->{loadTree("sample-animal-tree.txt");});
         UI.addButton("Quit", UI::quit);
         UI.setDivider(0.5);
     }
 
-    /**  
-     * Print out the contents of the decision tree in the text pane.
-     * The root node should be at the top, followed by its "yes" subtree,
-     * and then its "no" subtree.
-     * Needs a recursive "helper method" which is passed a node.
-     * 
-     * COMPLETION:
-     * Each node should be indented by how deep it is in the tree.
-     * The recursive "helper method" is passed a node and an indentation string.
-     *  (The indentation string will be a string of space characters)
-     */
     public void printTree(){
         UI.clearText();
-        /*# YOUR CODE HERE */
         if (theTree == null) {
             UI.println("Tree is empty, try loading again");
             return;
@@ -90,7 +68,6 @@ public class DecisionTree {
      * and depending on the answer, goes to the "yes" child or the "no" child.
      */
     public void runTree() {
-        /*# YOUR CODE HERE */
         if (theTree == null) {
             UI.println("Tree is empty, try loading again");
             return;
@@ -98,21 +75,8 @@ public class DecisionTree {
         runTreeHelper(theTree);
     }
 
-    /**
-     * Grow the tree by allowing the user to extend the tree.
-     * Like runTree, it starts at the top (of theTree), and works its way down the tree
-     *  until it finally gets to a leaf node. 
-     * If the current node has a question, then it asks the question in the node,
-     * and depending on the answer, goes to the "yes" child or the "no" child.
-     * If the current node is a leaf it prints the decision, and asks if it is right.
-     * If it was wrong, it
-     *  - asks the user what the decision should have been,
-     *  - asks for a question to distinguish the right decision from the wrong one
-     *  - changes the text in the node to be the question
-     *  - adds two new children (leaf nodes) to the node with the two decisions.
-     */
+ 
     public void growTree () {
-        /*# YOUR CODE HERE */
         if (theTree == null) {
             UI.println("Tree is empty, try loading again");
             return;
